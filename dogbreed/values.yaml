@@ -1,0 +1,20 @@
+replicaCount: 1
+image:
+  repository: invisiblelad/dogbreed
+  tagV1: v6
+  tagV2: v5
+  pullPolicy: IfNotPresent
+
+env:
+  MONGO_URL: "mongo-service"
+  MONGO_PORT: "27017"
+  MONGO_DATABASE: "dogbreed"
+  MONGO_COLLECTION: "dogs"
+  MONGO_USERNAME: "admin"
+  MONGO_PASSWORD:  "password"
+
+
+service:
+  name: dogbreed-service
+  port: 8080
+  type: ClusterIP
